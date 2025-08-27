@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://ciks0ua1wumox"]
+[gd_scene load_steps=4 format=3 uid="uid://ciks0ua1wumox"]
+
+[ext_resource type="PackedScene" uid="uid://1qpvhrrgr20o" path="res://scenes/Biscuit.tscn" id="1_h6uuc"]
+[ext_resource type="PackedScene" uid="uid://bmn8wm1yyqkny" path="res://scenes/Cat.tscn" id="1_qbm35"]
+[ext_resource type="PackedScene" uid="uid://g0bivw0otq6k" path="res://scenes/Player.tscn" id="2_qbm35"]
 
 [node name="TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_qbm35")]
+position = Vector2(192, 219)
+
+[node name="Biscuit" parent="." instance=ExtResource("1_h6uuc")]
+position = Vector2(813, 305)
+
+[node name="Cat" parent="." instance=ExtResource("1_qbm35")]
+position = Vector2(1032, 380)
