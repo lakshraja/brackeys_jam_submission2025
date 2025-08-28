@@ -1,5 +1,7 @@
 extends Node2D
 
+var current_scene
+
 var biscuit_count=0
 var is_playing=false
 var is_paused=false
@@ -27,7 +29,12 @@ func _play_button_pressed()->void:
 	get_node("MainMenu").queue_free()
 	load_scene("res://scenes/UILayer.tscn")
 	
-	load_scene("res://scenes/levels/TestScene.tscn")
+	#load_scene("res://scenes/levels/TestScene.tscn")
+	#current_scene = "TestScene"
+	
+	load_scene("res://scenes/levels/Tutorial.tscn")
+	current_scene = "Tutorial"
+	
 	is_playing = true
 	
 	biscuit_count=0
@@ -41,12 +48,11 @@ func load_scene(scene: String)->void:
 	add_child(scene_instance)
 
 
-#var current_scene=
 func main_on_biscuit_eaten():
 	biscuit_count+=1
 	get_node("UILayer").update_ui()
-	get_node("./TestScene/Player").update_speed(biscuit_count)
-	
+	#get_node("./TestScene/Player").update_speed(biscuit_count)
+	get_node("./"+current_scene+"/Player").update_speed(biscuit_count)
 func _input(event: InputEvent) -> void:
 	if is_playing:
 		if event.is_action_pressed("escape"):

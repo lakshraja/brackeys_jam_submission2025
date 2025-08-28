@@ -59,11 +59,12 @@ size = Vector2(24.375, 19.625)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2olvd"]
 
 [node name="Cat" type="CharacterBody2D"]
+z_index = 3
 script = ExtResource("1_2olvd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)
-scale = Vector2(12, 12)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_7nueg")
 autoplay = "default"
 frame_progress = 0.903788
@@ -72,12 +73,12 @@ frame_progress = 0.903788
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2.5, 11.5)
-scale = Vector2(8, 8)
+scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_7nueg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
-scale = Vector2(4, 4)
+position = Vector2(1, 14)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_2olvd")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
