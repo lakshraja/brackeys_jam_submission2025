@@ -1,21 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciks0ua1wumox"]
+[gd_scene load_steps=4 format=3 uid="uid://ciks0ua1wumox"]
 
-[ext_resource type="PackedScene" uid="uid://1qpvhrrgr20o" path="res://scenes/Biscuit.tscn" id="1_h6uuc"]
+[ext_resource type="PackedScene" uid="uid://dmgu87bjnnioo" path="res://scenes/Biscuit.tscn" id="1_ilrk1"]
 [ext_resource type="PackedScene" uid="uid://bmn8wm1yyqkny" path="res://scenes/Cat.tscn" id="1_qbm35"]
 [ext_resource type="PackedScene" uid="uid://g0bivw0otq6k" path="res://scenes/Player.tscn" id="2_qbm35"]
-[ext_resource type="PackedScene" uid="uid://btfplo18vnkj" path="res://scenes/UILayer.tscn" id="4_ilrk1"]
 
 [node name="TestScene" type="Node2D"]
+process_mode = 1
+
+[node name="Biscuit4" parent="." instance=ExtResource("1_ilrk1")]
+position = Vector2(466, 73)
 
 [node name="Player" parent="." instance=ExtResource("2_qbm35")]
 position = Vector2(192, 219)
 
-[node name="Biscuit" parent="." instance=ExtResource("1_h6uuc")]
-position = Vector2(813, 305)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1, 16)
 
 [node name="Cat" parent="." instance=ExtResource("1_qbm35")]
 position = Vector2(1032, 380)
 
 [node name="Cat2" parent="." instance=ExtResource("1_qbm35")]
 
-[node name="UILayer" parent="." instance=ExtResource("4_ilrk1")]
+[node name="Biscuit" parent="." instance=ExtResource("1_ilrk1")]
+position = Vector2(391, 393)
+
+[node name="Biscuit2" parent="." instance=ExtResource("1_ilrk1")]
+position = Vector2(577, 219)
+
+[node name="Biscuit3" parent="." instance=ExtResource("1_ilrk1")]
+position = Vector2(747, 778)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cle5mcbcd13xv"]
+
+[ext_resource type="PackedScene" uid="uid://g0bivw0otq6k" path="res://scenes/Player.tscn" id="1_yd5ho"]
+[ext_resource type="PackedScene" uid="uid://dmgu87bjnnioo" path="res://scenes/Biscuit.tscn" id="2_17xb1"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Biscuit2" parent="." instance=ExtResource("2_17xb1")]
+position = Vector2(83, 190)
+
+[node name="Biscuit" parent="." instance=ExtResource("2_17xb1")]
+position = Vector2(883, 240)
+
+[node name="Player" parent="." instance=ExtResource("1_yd5ho")]
+position = Vector2(299, 152)

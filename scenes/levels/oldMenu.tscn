@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6udgraksbp7x"]
+
+[ext_resource type="Script" uid="uid://nt4kyd6ltuuw" path="res://scripts/menu.gd" id="1_qnxo3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qnxo3")
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 498.0
+offset_top = 324.0
+offset_right = 648.0
+offset_bottom = 374.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Play!!
+"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 498.0
+offset_top = 543.0
+offset_right = 648.0
+offset_bottom = 593.0
+grow_horizontal = 2
+text = "Quit"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 433.0
+offset_right = 648.0
+offset_bottom = 483.0
+text = "Settings"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 125.0
+offset_right = 648.0
+offset_bottom = 175.0
+text = "NAME
+about and etc"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

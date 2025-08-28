@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 
-# Called when the node enters the scene tree for the first time.
+var cat_speed=0
 func _ready() -> void:
+	cat_speed=50
 	velocity = Vector2.ZERO
 
 
@@ -16,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	#var direction = player_pos-position
 	var direction = position.direction_to(player_pos)
 	
-	velocity=direction*100
+	velocity=direction*cat_speed
 	move_and_slide()
 
 

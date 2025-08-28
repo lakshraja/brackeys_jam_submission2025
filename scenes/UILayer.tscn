@@ -1,28 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://btfplo18vnkj"]
+[gd_scene load_steps=4 format=3 uid="uid://btfplo18vnkj"]
 
-[ext_resource type="Texture2D" uid="uid://b8yn4eadymmqn" path="res://assets/my_mouse.png" id="1_e7ub0"]
+[ext_resource type="Script" uid="uid://ca0wlnguqeflq" path="res://scripts/uilayer.gd" id="1_3aff7"]
+[ext_resource type="Texture2D" uid="uid://bv6rqh4dp2hx0" path="res://assets/biscuit.png" id="2_3aff7"]
+[ext_resource type="PackedScene" uid="uid://db5s683v0mljb" path="res://scenes/PauseMenu.tscn" id="2_ux11h"]
 
-[node name="UILayer" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="UILayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_3aff7")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_ux11h")]
+offset_left = 580.0
+offset_top = 318.0
+offset_right = 580.0
+offset_bottom = 318.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
 offset_left = 973.0
 offset_top = 11.0
 offset_right = 1013.0
 offset_bottom = 51.0
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_e7ub0")
+texture = ExtResource("2_3aff7")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1020.0
-offset_top = 11.0
-offset_right = 1082.0
-offset_bottom = 34.0
+[node name="Score" type="Label" parent="."]
+offset_left = 1019.0
+offset_top = 16.32
+offset_right = 1081.0
+offset_bottom = 39.32
 text = "0"
