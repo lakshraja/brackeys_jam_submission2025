@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://bf51tqwpxulq2"]
+[gd_scene load_steps=4 format=4 uid="uid://60drbmgnwc4i"]
 
 [ext_resource type="PackedScene" uid="uid://g0bivw0otq6k" path="res://scenes/Player.tscn" id="1_dlxjb"]
 [ext_resource type="TileSet" uid="uid://xn6sf0u3e0kb" path="res://assets/tile_set.tres" id="1_v63nh"]
-[ext_resource type="PackedScene" uid="uid://dmgu87bjnnioo" path="res://scenes/Biscuit.tscn" id="3_af4br"]
-[ext_resource type="PackedScene" uid="uid://bmn8wm1yyqkny" path="res://scenes/Cat.tscn" id="4_af4br"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_af4br"]
+blend_mode = 4
 
 [node name="Tutorial" type="Node2D"]
+process_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_dlxjb")]
 position = Vector2(314, 260)
@@ -26,8 +28,14 @@ tile_set = ExtResource("1_v63nh")
 tile_map_data = PackedByteArray("AAAAAAkAAAAGAAEAAAABAAkAAAAGAAEAAAACAAkAAAAGAAEAAAADAAkAAAAGAAEAAAAEAAkAAAAGAAEAAAAFAAkAAAAGAAEAAAAGAAkAAAAGAAEAAAAHAAkAAAAGAAEAAAAIAAkAAAAGAAEAAAAJAAkAAAAGAAEAAAAKAAkAAAAGAAEAAAALAAkAAAAGAAEAAAAMAAkAAAAGAAEAAAANAAkAAAAGAAEAAAAOAAkAAAAGAAEAAAAPAAkAAAAGAAEAAAAQAAkAAAAGAAEAAAARAAkAAAAGAAEAAAASAAkAAAAGAAEAAAA=")
 tile_set = ExtResource("1_v63nh")
 
-[node name="Biscuit" parent="." instance=ExtResource("3_af4br")]
-position = Vector2(652, 353)
+[node name="Mask" type="ColorRect" parent="Map"]
+z_index = 5
+material = SubResource("CanvasItemMaterial_af4br")
+offset_left = -630.0
+offset_top = -674.0
+offset_right = 1119.0
+offset_bottom = 584.0
+color = Color(0, 0, 0.0313726, 0.784314)
 
-[node name="Cat" parent="." instance=ExtResource("4_af4br")]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 position = Vector2(876, 260)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkjmb5kxeq0q1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m77xp"]
+
+[node name="Lights" type="Polygon2D"]
+material = SubResource("CanvasItemMaterial_m77xp")
+color = Color(1, 1, 1, 0.196078)

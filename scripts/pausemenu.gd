@@ -13,9 +13,9 @@ func _on_resume_button_pressed() -> void:
 	
 
 func _on_settings_button_pressed() -> void:
-	pass
+	pass#get_node("Panel/VBoxContainer").visible=false
+	
 
 func _on_quit_button_pressed() -> void:
-	#not working da!
 	get_tree().change_scene_to_file("res://scenes/levels/Main.tscn")
 	

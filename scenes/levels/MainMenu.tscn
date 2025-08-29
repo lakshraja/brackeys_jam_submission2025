@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://41ye8bgqhmmf"]
+[gd_scene load_steps=4 format=3 uid="uid://41ye8bgqhmmf"]
 
 [ext_resource type="Script" uid="uid://nt4kyd6ltuuw" path="res://scripts/menu.gd" id="1_4xtjk"]
 [ext_resource type="Texture2D" uid="uid://b8yn4eadymmqn" path="res://assets/my_mouse.png" id="2_4g3rc"]
+[ext_resource type="PackedScene" uid="uid://bp32yehpy7xtx" path="res://scenes/MainMenuBackground.tscn" id="2_hyrlu"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_4xtjk")
@@ -48,15 +49,18 @@ layout_mode = 2
 text = "Quit
 "
 
+[node name="MainMenuBackground" parent="Control" instance=ExtResource("2_hyrlu")]
+position = Vector2(837, 179)
+
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -48.0
-offset_top = 106.0
-offset_right = -8.0
-offset_bottom = 146.0
+offset_left = -53.0
+offset_top = 92.0
+offset_right = -13.0
+offset_bottom = 132.0
 grow_horizontal = 2
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_4g3rc")
