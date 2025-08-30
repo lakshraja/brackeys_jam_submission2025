@@ -14,6 +14,7 @@ func _ready() -> void:
 	time=0
 	is_playing=false
 	is_paused=false
+	get_tree().paused=false
 	load_scene("res://scenes/levels/MainMenu.tscn")
 	get_node("MainMenu").play_button_pressed.connect(_play_button_pressed)
 
@@ -43,6 +44,7 @@ func _play_button_pressed()->void:
 	pause_pressed.connect($"/root/Main/UILayer".ui_pause_pressed)
 
 
+
 func load_scene(scene: String)->void:
 	var loaded_scene = load(scene)
 	var scene_instance = loaded_scene.instantiate()
@@ -67,6 +69,10 @@ func main_on_biscuit_eaten():
 	get_node("./"+current_scene+"/Player").update_speed(biscuit_count)
 	
 	
+func on_game_over():
+	get_tree().paused=true
+	var game_over_screen = load("res://scenes/GameOver.tscn").instantiate()
+	get_node("UILayer").add_child(game_over_screen)
 	
 func _input(event: InputEvent) -> void:
 	if is_playing:

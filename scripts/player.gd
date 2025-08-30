@@ -29,8 +29,8 @@ func update_speed(count):
 	#speed = INITIAL_SPEED-count*10
 	#100**(-count/10)
 	#(1.01)**count
-	var factor_speed=(1.05)**count
-	var factor_scale = (1.01)**count
+	var factor_speed=(1.001)**count
+	var factor_scale = (1.005)**count
 	speed = speed/factor_speed
 	scale.x=scale.x*factor_scale
 	scale.y=scale.y*factor_scale

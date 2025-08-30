@@ -1,7 +1,5 @@
 extends Node
 
-const map_size=Vector2(0,0)
-
 var time_between_cats=20
 var next_time_to_spawn_cat=5
 
@@ -9,7 +7,7 @@ var time_between_biscuits=5
 var next_time_to_spawn_biscuit=0
 
 var time_between_smart_cats=45
-var next_time_to_spawn_smart_cat=0
+var next_time_to_spawn_smart_cat=120
 
 
 

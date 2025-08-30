@@ -13,6 +13,8 @@ func _ready() -> void:
 	
 	direction = position.direction_to(point)
 	
+	GameOver.connect($"/root/Main".on_game_over)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,7 +28,6 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name=="Player":
 		GameOver.emit()
-		get_tree().quit()
 	
 	if body.name=="Side_Walls":
 		direction.x=direction.x*(-1)
