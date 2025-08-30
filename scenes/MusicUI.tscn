@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxa0cp1feh0m2"]
+
+[ext_resource type="Texture2D" uid="uid://blmtmepnfy2ps" path="res://assets/j_back.png" id="1_ejojg"]
+[ext_resource type="Texture2D" uid="uid://7sok1a65lvjm" path="res://assets/k_front.png" id="2_wia2r"]
+[ext_resource type="Texture2D" uid="uid://bfl18al7db8m1" path="res://assets/forward.png" id="3_mobtd"]
+[ext_resource type="Texture2D" uid="uid://me4jerycdnkj" path="res://assets/backward.png" id="4_keplp"]
+[ext_resource type="Texture2D" uid="uid://bh8c02cbjsfk8" path="res://assets/note_icon.png" id="5_wia2r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d6bcn"]
+font_size = 12
+
+[node name="MusicUI" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.0470588, 0.333333, 0.337255, 1)
+polygon = PackedVector2Array(0, 615, 128, 615, 128, 616, 128, 648, 0, 648)
+
+[node name="JBack" type="TextureRect" parent="."]
+offset_left = 8.0
+offset_top = 628.0
+offset_right = 24.0
+offset_bottom = 644.0
+texture = ExtResource("1_ejojg")
+
+[node name="KFront" type="TextureRect" parent="."]
+offset_left = 114.0
+offset_top = 629.0
+offset_right = 130.0
+offset_bottom = 645.0
+texture = ExtResource("2_wia2r")
+
+[node name="Forward" type="TextureRect" parent="."]
+offset_left = 113.0
+offset_top = 615.0
+offset_right = 129.0
+offset_bottom = 631.0
+texture = ExtResource("3_mobtd")
+
+[node name="Backward" type="TextureRect" parent="."]
+offset_left = 5.0
+offset_top = 615.0
+offset_right = 21.0
+offset_bottom = 631.0
+texture = ExtResource("4_keplp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 614.0
+offset_right = 97.0
+offset_bottom = 631.0
+text = "Wayward"
+label_settings = SubResource("LabelSettings_d6bcn")
+
+[node name="NoteIcon" type="TextureRect" parent="."]
+offset_left = 55.0
+offset_top = 630.0
+offset_right = 71.0
+offset_bottom = 646.0
+texture = ExtResource("5_wia2r")
