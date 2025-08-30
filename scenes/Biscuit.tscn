@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmgu87bjnnioo"]
 
 [ext_resource type="Script" uid="uid://cuyexeebgapvj" path="res://scripts/biscuit.gd" id="1_uglnq"]
-[ext_resource type="Texture2D" uid="uid://bv6rqh4dp2hx0" path="res://assets/biscuit.png" id="2_uglnq"]
+[ext_resource type="Texture2D" uid="uid://dgx367f6gcqqm" path="res://assets/biscuit_sqaure.png" id="2_uglnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uglnq"]
-size = Vector2(14, 14)
+size = Vector2(15, 14.25)
 
 [node name="Biscuit" type="Area2D"]
 script = ExtResource("1_uglnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = -1
+position = Vector2(2, 0.5)
 scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_uglnq")
 

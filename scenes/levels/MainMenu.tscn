@@ -118,6 +118,7 @@ icon = ExtResource("3_ue4lf")
 icon_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_top = -1.0
 offset_right = 1152.0
 offset_bottom = 647.0
