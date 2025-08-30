@@ -2,7 +2,9 @@ extends Node
 
 
 func _ready() -> void:
-	pass
+	get_node("Panel/VBoxContainer/Score").text="Score: "+str(get_node("/root/Main").biscuit_count)
+	var time = get_node("/root/Main").time
+	get_node("Panel/VBoxContainer/Time").text="Time: "+str("%02d" % int(time/60))+":"+str("%02d" % int(time)%60)
 
 func _process(delta: float) -> void:
 	pass
