@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://btfplo18vnkj"]
+[gd_scene load_steps=16 format=3 uid="uid://btfplo18vnkj"]
 
 [ext_resource type="Script" uid="uid://ca0wlnguqeflq" path="res://scripts/uilayer.gd" id="1_3aff7"]
 [ext_resource type="PackedScene" uid="uid://db5s683v0mljb" path="res://scenes/PauseMenu.tscn" id="2_ux11h"]
 [ext_resource type="Texture2D" uid="uid://dgx367f6gcqqm" path="res://assets/biscuit_sqaure.png" id="3_ux11h"]
 [ext_resource type="Texture2D" uid="uid://cmay3bqs7tyl8" path="res://assets/cat_idle.png" id="3_xs0bh"]
+[ext_resource type="Texture2D" uid="uid://cjkiwtp5blgdg" path="res://assets/E_for_eat.png" id="5_b6htk"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b6htk"]
 blend_mode = 2
@@ -107,3 +108,17 @@ offset_right = 629.0
 offset_bottom = 60.0
 text = "00:00"
 label_settings = SubResource("LabelSettings_ux11h")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 46.0
+offset_bottom = 43.0
+texture = ExtResource("5_b6htk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 43.0
+offset_top = 20.0
+offset_right = 151.0
+offset_bottom = 43.0
+text = "to eat cookies"
