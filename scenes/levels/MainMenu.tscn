@@ -1,8 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://41ye8bgqhmmf"]
+[gd_scene load_steps=13 format=3 uid="uid://41ye8bgqhmmf"]
 
 [ext_resource type="Script" uid="uid://nt4kyd6ltuuw" path="res://scripts/menu.gd" id="1_4xtjk"]
-[ext_resource type="Texture2D" uid="uid://b8yn4eadymmqn" path="res://assets/my_mouse.png" id="2_4g3rc"]
-[ext_resource type="PackedScene" uid="uid://bp32yehpy7xtx" path="res://scenes/MainMenuBackground.tscn" id="2_hyrlu"]
+[ext_resource type="Texture2D" uid="uid://cqle1jfxudgw" path="res://assets/main menu .png" id="2_agb1x"]
+[ext_resource type="Texture2D" uid="uid://blt8b0gh5uoyk" path="res://assets/button tile.png" id="3_ue4lf"]
+[ext_resource type="Texture2D" uid="uid://bnjvaicies73d" path="res://assets/mouse.png" id="4_7rblo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov3pg"]
+atlas = ExtResource("4_7rblo")
+region = Rect2(0, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81rgk"]
+atlas = ExtResource("4_7rblo")
+region = Rect2(20, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6001"]
+atlas = ExtResource("4_7rblo")
+region = Rect2(40, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orblh"]
+atlas = ExtResource("4_7rblo")
+region = Rect2(60, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4trl"]
+atlas = ExtResource("4_7rblo")
+region = Rect2(80, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ywnx"]
+atlas = ExtResource("4_7rblo")
+region = Rect2(100, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oe1x"]
+atlas = ExtResource("4_7rblo")
+region = Rect2(120, 0, 20, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm5il"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_ov3pg")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_81rgk")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_a6001")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_orblh")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_u4trl")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_5ywnx")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_4oe1x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_4xtjk")
@@ -17,15 +75,16 @@ grow_vertical = 2
 script = ExtResource("1_4xtjk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+top_level = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -55.0
-offset_right = 100.0
+offset_left = -202.0
+offset_top = -57.0
+offset_right = -6.0
 offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -35,35 +94,62 @@ alignment = 1
 [node name="PlayButton" type="Button" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 text = "Play!!
 "
+icon = ExtResource("3_ue4lf")
+icon_alignment = 1
 
 [node name="SettingsButton" type="Button" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 text = "Settings"
+icon = ExtResource("3_ue4lf")
+icon_alignment = 1
 
 [node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 text = "Quit
 "
+icon = ExtResource("3_ue4lf")
+icon_alignment = 1
 
-[node name="MainMenuBackground" parent="Control" instance=ExtResource("2_hyrlu")]
-position = Vector2(837, 179)
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 647.0
+texture = ExtResource("2_agb1x")
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -53.0
-offset_top = 92.0
-offset_right = -13.0
-offset_bottom = 132.0
-grow_horizontal = 2
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_4g3rc")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(150, 369)
+scale = Vector2(14.05, 14.125)
+sprite_frames = SubResource("SpriteFrames_rm5il")
+autoplay = "default"
+frame_progress = 0.0925657
+flip_h = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-20, 18)
+rotation = 0.0051737
+color = Color(1, 1, 1, 0.0392157)
+polygon = PackedVector2Array(1090.91, -19.6443, 881.489, 285.443, 878.489, 285.459, 810, 492, 1097, 498)
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygon2D"]
+color = Color(1, 1, 1, 0.0392157)
+polygon = PackedVector2Array(829.948, -12.294, 1025.17, 223.699, 1060.49, 284.517, 1102.56, 492.302, 838.534, 487.668)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Polygon2D"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(815.917, -18.2215, 848.004, -1.38732, 830.067, 10.7056, 803.989, -4.15964)
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygon2D/Polygon2D2"]
+position = Vector2(-175.915, 16.9104)
+scale = Vector2(1.16526, 1.63354)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(1090.58, -24.2267, 1063.21, -11.8822, 1090.71, -6.4741, 1103.53, -13.8675)
 
 [connection signal="pressed" from="Control/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://btor64s0k2w8v"]
 
-[ext_resource type="Script" uid="uid://cxrlfeqd0bxdc" path="res://scripts/bouncingcat.gd" id="1_x23tw"]
+[ext_resource type="Script" path="res://scripts/bouncingcat.gd" id="1_x23tw"]
 [ext_resource type="Texture2D" uid="uid://cmay3bqs7tyl8" path="res://assets/cat_idle.png" id="2_rm8us"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spuq0"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://db5s683v0mljb"]
+[gd_scene load_steps=3 format=3 uid="uid://db5s683v0mljb"]
 
 [ext_resource type="Script" uid="uid://4rny7ra6brfc" path="res://scripts/pausemenu.gd" id="1_jvnd5"]
+[ext_resource type="Texture2D" uid="uid://blt8b0gh5uoyk" path="res://assets/button tile.png" id="2_g4jo0"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_jvnd5")
@@ -40,17 +40,26 @@ theme_override_constants/separation = 20
 
 [node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 text = "Resume
 "
+icon = ExtResource("2_g4jo0")
+icon_alignment = 1
 
 [node name="SettingsButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 text = "Settings
 "
+icon = ExtResource("2_g4jo0")
+icon_alignment = 1
 
 [node name="QuitToMenuButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 text = "Quit To Menu"
+icon = ExtResource("2_g4jo0")
+icon_alignment = 1
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
