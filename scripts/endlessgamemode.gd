@@ -54,6 +54,8 @@ func spawn_cat()->void:
 	cat_instance.position=pos
 	add_child(cat_instance)
 	
+	play_cat_sound()
+	
 
 var rng3 = RandomNumberGenerator.new()
 func spawn_smart_cat()->void:
@@ -65,3 +67,8 @@ func spawn_smart_cat()->void:
 	cat_instance.position=pos
 	add_child(cat_instance)
 	
+	play_cat_sound()
+	
+	
+func play_cat_sound():
+	get_node("SFXPlayer").play_track("res://assets/sfx/aaravs meow.wav")
