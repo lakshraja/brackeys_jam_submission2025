@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cqle1jfxudgw" path="res://assets/main menu .png" id="2_agb1x"]
 [ext_resource type="Texture2D" uid="uid://blt8b0gh5uoyk" path="res://assets/button tile.png" id="3_ue4lf"]
 [ext_resource type="Texture2D" uid="uid://bnjvaicies73d" path="res://assets/mouse.png" id="4_7rblo"]
-[ext_resource type="PackedScene" uid="uid://dxa0cp1feh0m2" path="res://scenes/MusicUI.tscn" id="5_ue4lf"]
+[ext_resource type="PackedScene" uid="uid://cu5sss361r6ni" path="res://scenes/MusicUI.tscn" id="5_ue4lf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ov3pg"]
 atlas = ExtResource("4_7rblo")
@@ -154,6 +154,12 @@ color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(1090.58, -24.2267, 1063.21, -11.8822, 1090.71, -6.4741, 1103.53, -13.8675)
 
 [node name="MusicUI" parent="." instance=ExtResource("5_ue4lf")]
+process_mode = 3
+offset_left = 473.0
+offset_top = 590.0
+offset_right = 473.0
+offset_bottom = 590.0
+scale = Vector2(1.2, 1.2)
 
 [connection signal="pressed" from="Control/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

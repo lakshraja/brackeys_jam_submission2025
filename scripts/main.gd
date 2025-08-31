@@ -84,7 +84,16 @@ func on_game_over():
 func change_track(track):
 	current_track=track
 	get_node("MusicPlayer").play_track("res://assets/music/"+current_track)
+
+	if get_node("UILayer/MusicUI"):
+		get_node("UILayer/MusicUI").update_track()
+	else:
+		get_node("MainMenu/MusicUI").update_track()
+
+
+#func change_track_by_id(id):
 	
+
 func _input(event: InputEvent) -> void:
 	if is_playing:
 		if event.is_action_pressed("escape"):
@@ -93,11 +102,11 @@ func _input(event: InputEvent) -> void:
 			get_tree().paused=is_paused
 			pause_pressed.emit()
 			
-		if event.is_action_pressed("next"):
-			track_id+=1
-			track_id=track_id%len(tracks)
-			change_track(tracks[track_id])
-		if event.is_action_pressed("prev"):
-			track_id-=1
-			change_track(tracks[track_id])
-			track_id=track_id%len(tracks)
+	if event.is_action_pressed("next"):
+		track_id+=1
+		track_id=track_id%len(tracks)
+		change_track(tracks[track_id])
+	if event.is_action_pressed("prev"):
+		track_id-=1
+		change_track(tracks[track_id])
+		track_id=track_id%len(tracks)
