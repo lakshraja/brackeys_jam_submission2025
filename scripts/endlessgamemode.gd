@@ -7,7 +7,7 @@ var time_between_biscuits=5
 var next_time_to_spawn_biscuit=0
 
 var time_between_smart_cats=45
-var next_time_to_spawn_smart_cat=120
+var next_time_to_spawn_smart_cat=0
 
 
 
@@ -64,6 +64,7 @@ func spawn_smart_cat()->void:
 	pos.y=rng3.randf_range(20, 2580)
 	
 	var cat_instance = load("res://scenes/Cat.tscn").instantiate()
+	cat_instance.cat_speed = 200
 	cat_instance.position=pos
 	add_child(cat_instance)
 	

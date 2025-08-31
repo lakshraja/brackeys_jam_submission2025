@@ -71,7 +71,6 @@ process_mode = 3
 script = ExtResource("1_3aff7")
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_ux11h")]
-visible = false
 offset_left = 580.0
 offset_top = 318.0
 offset_right = 580.0
