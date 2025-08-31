@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxa0cp1feh0m2"]
+[gd_scene load_steps=8 format=3 uid="uid://cu5sss361r6ni"]
 
+[ext_resource type="Script" uid="uid://b0v3p7cnepbj6" path="res://scripts/muscui.gd" id="1_1udue"]
 [ext_resource type="Texture2D" uid="uid://blmtmepnfy2ps" path="res://assets/j_back.png" id="1_ejojg"]
 [ext_resource type="Texture2D" uid="uid://7sok1a65lvjm" path="res://assets/k_front.png" id="2_wia2r"]
 [ext_resource type="Texture2D" uid="uid://bfl18al7db8m1" path="res://assets/forward.png" id="3_mobtd"]
@@ -9,51 +10,102 @@
 [sub_resource type="LabelSettings" id="LabelSettings_d6bcn"]
 font_size = 12
 
-[node name="MusicUI" type="Node2D"]
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.0470588, 0.333333, 0.337255, 1)
-polygon = PackedVector2Array(0, 615, 128, 615, 128, 616, 128, 648, 0, 648)
+[node name="MusicUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1udue")
 
 [node name="JBack" type="TextureRect" parent="."]
-offset_left = 8.0
-offset_top = 628.0
-offset_right = 24.0
-offset_bottom = 644.0
+z_index = 1
+layout_mode = 0
+offset_left = -59.0
+offset_top = -0.02
+offset_right = -43.0
+offset_bottom = 15.98
 texture = ExtResource("1_ejojg")
 
 [node name="KFront" type="TextureRect" parent="."]
-offset_left = 114.0
-offset_top = 629.0
-offset_right = 130.0
-offset_bottom = 645.0
+z_index = 1
+layout_mode = 0
+offset_left = 47.0
+offset_top = -0.02
+offset_right = 63.0
+offset_bottom = 15.98
 texture = ExtResource("2_wia2r")
 
 [node name="Forward" type="TextureRect" parent="."]
-offset_left = 113.0
-offset_top = 615.0
-offset_right = 129.0
-offset_bottom = 631.0
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = -17.26
+offset_right = 62.0
+offset_bottom = -1.26
 texture = ExtResource("3_mobtd")
 
 [node name="Backward" type="TextureRect" parent="."]
-offset_left = 5.0
-offset_top = 615.0
-offset_right = 21.0
-offset_bottom = 631.0
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = -62.0
+offset_top = -17.26
+offset_right = -46.0
+offset_bottom = -1.26
 texture = ExtResource("4_keplp")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 36.0
-offset_top = 614.0
-offset_right = 97.0
-offset_bottom = 631.0
+[node name="Track" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -31.0
+offset_top = -17.26
+offset_right = 30.0
+offset_bottom = -0.26
 text = "Wayward"
 label_settings = SubResource("LabelSettings_d6bcn")
 
 [node name="NoteIcon" type="TextureRect" parent="."]
-offset_left = 55.0
-offset_top = 630.0
-offset_right = 71.0
-offset_bottom = 646.0
+z_index = 1
+layout_mode = 0
+offset_left = -12.0
+offset_top = -0.02
+offset_right = 4.0
+offset_bottom = 15.98
 texture = ExtResource("5_wia2r")
+
+[node name="NextButton" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 41.19
+offset_top = -24.515
+offset_right = 65.19
+offset_bottom = 6.485
+theme_type_variation = &"FlatButton"
+icon = ExtResource("3_mobtd")
+
+[node name="PrevButton" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = -65.18
+offset_top = -24.515
+offset_right = -41.18
+offset_bottom = 6.485
+icon = ExtResource("4_keplp")
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.333333, 0.337255, 1)
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PrevButton" to="." method="_on_prev_button_pressed"]

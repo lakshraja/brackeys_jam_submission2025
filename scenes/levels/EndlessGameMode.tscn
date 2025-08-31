@@ -32,4 +32,5 @@ tile_map_data = PackedByteArray("AAA0ACwAAAAGAAEAAAAzACwAAAAGAAEAAAAyACwAAAAGAAE
 tile_set = ExtResource("2_uj162")
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 script = ExtResource("4_uj162")

@@ -3,8 +3,14 @@ extends CanvasLayer
 func _ready() -> void:
 	pass
 
+var show_instruction=true
 func _process(delta: float) -> void:
 	update_ui()
+	if not show_instruction:
+		get_node("Instruction").visible=false
+	
+	if get_parent().time>5:
+		show_instruction=false
 	
 func update_ui():
 	get_node("Score").text = str(get_parent().biscuit_count)
